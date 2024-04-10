@@ -28,7 +28,7 @@ try {
             <td><?php echo $row['TicketPrice'] ?></td>
             <td><?php echo $row['Duration'] ?></td>
             <td><?php echo $row['Status'] ?></td>
-            <td><a href="delete.php?RouteID=<?php echo $row['RouteID'] ?>">Remove</a></td>
+            <td><a href="deleteRouteForm.html?RouteID=<?php echo $row['RouteID'] ?>">Remove</a></td>
             <td><a href="updateform.php?RouteID=<?php echo $row['RouteID'] ?>">Update</a></td>
         </tr>
     <?php } ?>
