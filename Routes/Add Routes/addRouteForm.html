@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..../styles.css">
+    <title>Add Route Form</title>
+</head>
+
+<body>
+    <section class="form-control">
+        <h1>ADD A NEW ROUTE</h1>
+        <form class="routeFormID" id="routeFormID" action="addRoute.php" method="post" onsubmit="return validateRoute()">
+
+            Departure Airport: <input type="text" id="DeptAirport" name="DeptAirport" value=""><br><br>
+            
+            Arrival Airport: <input type="text" id="ArrAirport" name="ArrAirport" value=""><br><br>
+
+            Ticket Price: <input type="text" id="TicketPrice" name="TicketPrice" value=""><br><br>
+
+            Duration (in minutes): <input type="text" id="Duration" name="Duration" value=""><br><br>
+
+            Status:
+            <select id="Status" name="Status">
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+            </select><br><br>
+            
+            <input type="submit" name="submitdetails" value="SUBMIT">
+        
+        </form>
+    </section>
+    <script src="validateAddRoute.js"></script>
+    
+</body>
+</html>
