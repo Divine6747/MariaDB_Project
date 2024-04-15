@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deptAirport']) && isset($_POST['arrAirport'])) {
+if (isset($_POST['deptAirport']) && isset($_POST['arrAirport'])) {
     $deptAirport = $_POST['deptAirport'];
     $arrAirport = $_POST['arrAirport'];
 
@@ -8,16 +8,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deptAirport']) && isse
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sqlRouteId = 'SELECT RouteID FROM routes WHERE DeptAirport = :deptAirport AND ArrAirport = :arrAirport AND Status = "Active"';
-        $stmt = $pdo->prepare($sqlRouteId);
-        $stmt = $pdo->prepare($sqlRouteId);
-        $stmt->bindValue(':deptAirport', $deptAirport);
-        $stmt->bindValue(':arrAirport', $arrAirport);
-        $stmt->execute();
+        $result = $pdo->prepare($sqlRouteId);
+        $result = $pdo->prepare($sqlRouteId);
+        $result->bindValue(':deptAirport', $deptAirport);
+        $result->bindValue(':arrAirport', $arrAirport);
+        $result->execute();
 
-        $routeId = $stmt->fetchColumn();
+        $routeId = $result->rowCount() > 0;
 
         if ($routeId) {
-            echo "Route found! Route ID: " . $routeId;
+            echo "Route found Route ID: " . $routeId;
         } else {
             echo "No active route found between selected airports.";
         }
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['deptAirport']) && isse
     }
 } else {
     try {
-        $pdo = new PDO('mysql:host=localhost;dbname=AirlineSYS;charset=utf8', 'root', '');
+        $pdo = new PDO('mysql:host=localhost;dbname=AirlineSYS;charsetutf8', 'root', '');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sqlDept = 'SELECT DISTINCT DeptAirport FROM routes WHERE Status = "Active"';

@@ -21,11 +21,11 @@ try {
 
     if (isset($_POST['rid'])) {
         $sql = 'DELETE FROM routes WHERE RouteID = :rid';
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':rid', $_POST['rid']);
-        $stmt->execute();
+        $result = $pdo->prepare($sql);
+        $result->bindValue(':rid', $_POST['rid']);
+        $result->execute();
 
-        if ($stmt->rowCount() > 0) {
+        if ($result->rowCount() > 0) {
             echo "You have successfully deleted Route Number: " . $_POST['rid'] . ". <a href='deleteRouteForm.html'>Click here</a> to go back.";
         } else {
             echo "Route with ID " . $_POST['rid'] . " does not exist. <a href='deleteRouteForm.html'>Click here</a> to go back.";
