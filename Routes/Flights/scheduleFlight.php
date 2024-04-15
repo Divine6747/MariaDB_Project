@@ -14,7 +14,7 @@ if (isset($_POST['deptAirport']) && isset($_POST['arrAirport'])) {
         $result->bindValue(':arrAirport', $arrAirport);
         $result->execute();
 
-        $routeId = $result->rowCount() > 0;
+        $routeId = $result->fetchColumn() > 0;
 
         if ($routeId) {
             echo "Route found Route ID: " . $routeId;
@@ -46,7 +46,6 @@ if (isset($_POST['deptAirport']) && isset($_POST['arrAirport'])) {
         $output = 'Unable to connect to the database server: ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine();
     }
 ?>
-
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <label for="deptAirport">Departure Airport:</label>
         <select name="deptAirport" id="deptAirport">
