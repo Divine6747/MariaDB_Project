@@ -1,4 +1,12 @@
-<form method="post" action="searchRoute.php" onsubmit="return validateDate()">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Routes</title>
+</head>
+<body>
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit="return validateDate()">
     <label for="deptAirport">Departure Airport:</label>
     <select name="deptAirport">
 
@@ -20,7 +28,7 @@
 
     <button type="submit" name="search">Search Route</button>
     <p><?php echo $message; ?></p>
-    <?php echo "Duration: " . $duration . " minutes"; ?></p>
+    <?php echo "Duration: " . $duration . " min"; ?></p>
 
     <label for="flightTime">Departure Time:</label>
 
@@ -49,3 +57,5 @@
 
     <script src="scheduleFlights.js"></script>
 </form>
+</body>
+</html>
