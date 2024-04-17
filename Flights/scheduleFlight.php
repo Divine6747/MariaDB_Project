@@ -6,56 +6,46 @@
     <title>Add Routes</title>
 </head>
 <body>
-<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit="return validateDate()">
-    <label for="deptAirport">Departure Airport:</label>
-    <select name="deptAirport">
+    <form method="post" action="searchRoute.php" onsubmit="return validateDate()">
+        <label for="deptAirport">Departure Airport:</label>
+        <select name="deptAirport">
+            <?php foreach ($deptAirports as $dept) : ?>
+                <option value="<?php echo $dept; ?>"><?php echo $dept; ?></option>
+            <?php endforeach; ?>
+        </select>
 
-        <?php foreach ($deptAirports as $dept) : ?>
-            <option value="<?php echo $dept; ?>"><?php echo $dept; ?></option>
-        <?php endforeach; ?>
+        <label for="arrAirport">Arrival Airport:</label>
+        <select name="arrAirport">
+            <?php foreach ($arrAirports as $arr) : ?>
+                <option value="<?php echo $arr; ?>"><?php echo $arr; ?></option>
+            <?php endforeach; ?>
+        </select>    
 
-    </select>
+        <button type="submit" name="search">Search Route</button>
+        <p><?php echo $message; ?></p>
+        <?php echo "Duration: " . $duration . " min"; ?></p>
 
-    <label for="arrAirport">Arrival Airport:</label>
+        <label for="flightTime">Departure Time:</label>
+        <select name="flightTime">
+            <?php foreach ($flightTimes as $time) : ?>
+                <option value="<?php echo $time; ?>"><?php echo $time; ?></option>
+            <?php endforeach; ?>
+        </select>
 
-    <select name="arrAirport">
+        <?php if ($estimatedArrivalTime) : ?>
+            <p>Estimated Arrival Time: <?php echo $estimatedArrivalTime; ?></p>
+        <?php endif; ?>
 
-        <?php foreach ($arrAirports as $arr) : ?>
-            <option value="<?php echo $arr; ?>"><?php echo $arr; ?></option>
-        <?php endforeach; ?>
+        <button type="submit" name="calculate">Calculate</button><br><br>
 
-    </select>    
+        <label for="departureDate" required>Departure Date:</label>
+        <input type="date" id="departureDate" name="departureDate"><br><br>
 
-    <button type="submit" name="search">Search Route</button>
-    <p><?php echo $message; ?></p>
-    <?php echo "Duration: " . $duration . " min"; ?></p>
+        <label for="noSeats">No. Seats:</label>
+        <input type="textbox" id="noSeats" name="noSeats"><br><br>
 
-    <label for="flightTime">Departure Time:</label>
-
-    <select name="flightTime">
-
-        <?php foreach ($flightTimes as $time) : ?>
-            <option value="<?php echo $time; ?>"><?php echo $time; ?></option>
-        <?php endforeach; ?>
-
-    </select>
-
-    <?php if ($estimatedArrivalTime) : ?>
-
-        <p>Estimated Arrival Time: <?php echo $estimatedArrivalTime; ?></p>
-
-    <?php endif; ?>
-    <button type="submit" name="calculate">Calculate</button><br><br>
-
-    <label for="departureDate">Departure Date:</label>
-
-    <input type="date" id="departureDate" name="departureDate"><br><br>
-
-    <label for="noSeats">No. Seats:</label>
-
-    <input type="textbox" id="noSeats" name="noSeats">
-
+        <input type="submit" name="schedule" value="Schedule Flight">
+    </form>   
     <script src="scheduleFlights.js"></script>
-</form>
 </body>
 </html>
