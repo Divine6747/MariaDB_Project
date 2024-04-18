@@ -3,7 +3,6 @@
     $message = "";
     $duration = "";
     $estimatedArrivalTime = "";
-
     try {
         $pdo = new PDO('mysql:host=localhost;dbname=AirlineSYS;charset=utf8', 'root', '');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -137,7 +136,7 @@
         }
     }
     //Schedules the flight
-    if (isset($_POST['schedule'])) {    
+    if(isset($_POST['schedule']))  {    
         $deptAirport = $_POST['deptAirport'];
         $arrAirport = $_POST['arrAirport'];
         $flightTime = $_POST['flightTime'];
@@ -170,10 +169,12 @@
             $stmtInsert->execute();
 
             $message = "Flight scheduled successfully.";
+            header("location: searchRoute.php",true,303);
+                
         } catch (PDOException $e) {
             $message = "Error: " . $e->getMessage();
         }
     }
-
+    
     include "scheduleFlight.php";
 ?>

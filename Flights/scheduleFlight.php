@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Routes</title>
+    <script src="scheduleFlights.js"></script>
 </head>
 <body>
-    <form method="post" action="searchRoute.php" onsubmit="return validateDate()">
+    <form method="post" action="searchRoute.php" onsubmit="return validateScheduleFlight()">
         <label for="deptAirport">Departure Airport:</label>
         <select name="deptAirport">
             <?php foreach ($deptAirports as $dept) : ?>
@@ -27,6 +28,7 @@
 
         <label for="flightTime">Departure Time:</label>
         <select name="flightTime">
+            <option>Selet an Option </option>
             <?php foreach ($flightTimes as $time) : ?>
                 <option value="<?php echo $time; ?>"><?php echo $time; ?></option>
             <?php endforeach; ?>
@@ -42,10 +44,9 @@
         <input type="date" id="departureDate" name="departureDate"><br><br>
 
         <label for="noSeats">No. Seats:</label>
-        <input type="textbox" id="noSeats" name="noSeats"><br><br>
+        <input type="number" id="noSeats" name="noSeats"><br><br>
 
         <input type="submit" name="schedule" value="Schedule Flight">
     </form>   
-    <script src="scheduleFlights.js"></script>
 </body>
 </html>

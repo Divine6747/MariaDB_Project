@@ -32,6 +32,8 @@ if (isset($_POST['submitdetails'])) {
 
             $stmt->execute();
             echo "Route added successfully!";
+            header("location: addRouteForm.html",true,303);
+
         }
     } catch (PDOException $e) {
         echo 'An error has occurred: ' . $e->getMessage();
