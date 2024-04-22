@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Route</title>
-</head>
-<body>
 <?php
 try {
     $pdo = new PDO('mysql:host=localhost;dbname=airlinesys;charset=utf8', 'root', '');
@@ -41,8 +25,3 @@ try {
     }
 }
 ?>
-</body>
-</html>
-
-</body>
-</html>
