@@ -7,7 +7,7 @@
     <script src="scheduleFlights.js"></script>
 </head>
 <body>
-    <form method="post" action="searchRoute.php" onsubmit="return validateScheduleFlight()">
+    <form method="post" action="searchRoute.php">
         <label for="deptAirport">Departure Airport:</label>
         <select name="deptAirport">
             <?php foreach ($deptAirports as $dept) : ?>
@@ -28,7 +28,7 @@
 
         <label for="flightTime">Departure Time:</label>
         <select name="flightTime">
-            <option>Selet an Option </option>
+
             <?php foreach ($flightTimes as $time) : ?>
                 <option value="<?php echo $time; ?>"><?php echo $time; ?></option>
             <?php endforeach; ?>

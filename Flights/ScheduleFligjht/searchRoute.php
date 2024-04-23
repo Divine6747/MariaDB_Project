@@ -30,12 +30,15 @@
         while ($row = $resultFlightTimes->fetch(PDO::FETCH_ASSOC)) {
             $flightTimes[] = $row["FlightTime"];
         }
-    } catch (PDOException $e) {
+    } 
+    
+    catch (PDOException $e) {
         $output = 'Unable to connect to the database server: ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine();
     }
 
     //Using the selected deptAirport and arrAirport to find the routeid
     if (isset($_POST['deptAirport']) && isset($_POST['arrAirport'])) {
+        
         $deptAirport = $_POST['deptAirport'];
         $arrAirport = $_POST['arrAirport'];
 
@@ -94,7 +97,7 @@
                 $stmtDuration->execute();
                 $duration = $stmtDuration->fetchColumn();
 
-                $message = "Route found, Route ID: " . $routeId;
+                $message = "Route ID: " . $routeId;
             } else {
                 $message = "No active route found between selected airports.";
             }
@@ -167,14 +170,11 @@
             $stmtInsert->bindValue(':estimatedArrivalTime', $estimatedArrivalTime);
             $stmtInsert->bindValue(':noSeats', $noSeats);
             $stmtInsert->execute();
-
-            $message = "Flight scheduled successfully.";
-            header("location: searchRoute.php",true,303);
-                
+            header("location: searchRoute.php",true,303); 
+            $message = "Flight scheduled successfully.";                       
         } catch (PDOException $e) {
             $message = "Error: " . $e->getMessage();
         }
-    }
-    
+    }    
     include "scheduleFlight.php";
 ?>
