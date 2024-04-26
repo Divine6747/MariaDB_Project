@@ -39,14 +39,13 @@ if (isset($_POST['BookingSubmit'])) {
                 $stmtBooking->execute();
 
                 if ($stmtBooking->rowCount() > 0) {
-                    echo "Booking successful!!";
-                    header("location: searchFlights.php",true,303);
-                    exit;
+                    echo '<script src="redirect.js"></script>';
+                    echo '<script>redirect();</script>';
                 } else {
-                    echo "Failed to insert booking details.";
+                    echo "Failed to insert the booking details.";
                 }
             } else {
-                echo "Flight number, payment amount, or number of baggage items not provided.";
+                echo "Flight number or number of baggage items not provided.";
             }
         } else {
             echo "Failed to insert passenger details.";
