@@ -22,7 +22,7 @@ function validateRoute() {
     const status = document.getElementById("Status").value;
 
     if (departure === '' || arrival === '' || tickets === '' || duration === '' || status === '') {
-        alert("You did not complete the insert form correctly");
+        alert("All field are empty");
         return false;
     } 
     else if (!isLetter(departure.charAt(0)) || !isLetter(arrival.charAt(0))) {

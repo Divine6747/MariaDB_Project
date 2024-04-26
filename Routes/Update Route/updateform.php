@@ -21,8 +21,7 @@ try {
       $ticketPrice = $row['TicketPrice'];
       $duration = $row['Duration'];
       $status = $row['Status'];
-      include 'updatedetails.html';
-
+      include 'updatedetails.php';
     }
     else {
       Print "No rows matched the query. Try again. <a href='selectupdate.php'>Click here</a> to go back.";
