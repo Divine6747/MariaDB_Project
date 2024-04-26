@@ -36,7 +36,6 @@ try {
         $stmt->execute();
         $flights = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // Displaying all Available flights
         if ($flights) {
             ?>
             <h2>Available Flights</h2>

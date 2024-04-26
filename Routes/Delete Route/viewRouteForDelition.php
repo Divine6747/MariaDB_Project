@@ -6,14 +6,19 @@
     <link rel="stylesheet" href="../../styles.css">
     <title>Delete Route</title>
 </head>
-<body>
-    <form action="delete.php" method="post">
-        Please Enter Route for Delete: <input type="text" name="rid"><br><br>
-        <input type="submit" name="submitdetails" value="SUBMIT">
-    </form>    
-
-    <br><b>A Quick View of Routes</b><br><br>
-    <table class="table-container">
+<body class="deleteRoute-body">
+    <section class="delete-Route">
+    <div class="delete-form">
+        <form action="delete.php" method="post">
+            Please Enter Route for Delete: <input type="text" name="id"><br><br>
+            <input type="submit" name="submitdetails" value="SUBMIT">
+        </form> 
+    </div>
+       
+    <br><br>
+    <h1>View All Active Routes</h1>
+    <br><br>
+    <table class="table-container"> 
         <tr>    
             <th>RouteID</th>
             <th>Departure Airport</th>
@@ -32,5 +37,7 @@
                 </tr>
         <?php  } ?>
     </table>
+    </section>
+    
 </body>
 </html>

@@ -62,10 +62,11 @@ nav {
 }
 
 .dropdown-content a {
+  display: block;
   color: black;
   padding: 12px 16px;
   text-decoration: none;
-  display: block;
+  
 }
 
 .dropdown-content a:hover {
@@ -73,22 +74,24 @@ nav {
 }
 
 .dropdown:hover .dropdown-content {
- display: block;
+  display: block;
 }
 
 .table-container {
-  margin: 0 auto;
+  margin: auto;
   max-width: 1000px;
 }
 table {
   width: 100%;
+  margin-top: 20px;  
   border-collapse: collapse;
-  margin-top: 20px;
 }
 
 th, td {
   text-align: center;
-  padding: 8px; /* Black text color */
+  padding: 8px;
+  font-size: 20px;
+  font-weight: 100;
 }
 
 th {
@@ -171,26 +174,6 @@ a {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Select Routes Begins */
 
 .select-form {
@@ -237,49 +220,49 @@ a {
 
 /* Delete Route Begins */
 
+.delete-Route {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delete-Route h1{
+  font-weight: 200;
+}
+
 .delete-form {
-  margin: 20px auto;
-  padding: 20px;
-  width: 50%;
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    width: 50%;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.delete-form h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.delete-form label {
-  display: block;
-  margin-bottom: 10px;
+.delete-form label {    
+    margin-bottom: 10px;
+    display: block;
 }
 
 .delete-form input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
 
 .delete-form input[type="submit"] {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color:  #53a3f3;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
 }
 /* Delete Route Ends*/
-
-
-
-
 
 
 

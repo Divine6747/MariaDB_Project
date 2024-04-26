@@ -38,6 +38,16 @@ if (isset($_POST['submitdetails'])) {
     } catch (PDOException $e) {
         echo 'An error has occurred: ' . $e->getMessage();
     }
+    finally{
+       $pdo = null;
+       /*
+        Title: How to close PDO Connection in PHP
+        Authour:  Baransel Arslan
+        Published: 27/12/20
+        Website: https://baransel.dev/post/php-how-to-close-pdo-connection/
+        Visited: 26/04/24
+       */
+    }
 }
 include 'addRouteForm.html';
 ?>
