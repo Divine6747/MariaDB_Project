@@ -1,4 +1,9 @@
 window.onload = function() {
+    document.getElementById("DeptAirport").value = "";
+    document.getElementById("ArrAirport").value = "";
+    document.getElementById("TicketPrice").value = "";
+    document.getElementById("Duration").value = "";
+    document.getElementById("Status").value = "";
     document.getElementById("Duration").value = ""; 
 };
 
