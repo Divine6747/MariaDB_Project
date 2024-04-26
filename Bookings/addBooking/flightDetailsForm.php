@@ -47,7 +47,9 @@
         <label for="baggage">No.Baggage:</label><br>
         <input type="number" id="baggage" name="baggage" max = 7 min = 0 value = 0><br><br>
         
-        <input type="hidden" name="flightNumber" value="<?php echo $flightDetails['FlightNumber']; ?>">
+        <input type="hidden" name="flightNumber" value="<?php echo $flightDetails['FlightTime']; ?>">
+        <input type="hidden" name="flightTime" value="<?php echo $flightDetails['FlightTime']; ?>">
+        <input type="hidden" name="estArrTime" value="<?php echo $flightDetails['EstArrTime']; ?>">
 
         <input name="BookingSubmit" type="submit" value="Submit">
     </form>

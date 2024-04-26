@@ -8,4 +8,3 @@ function redirect() {
     }, 2000);
     };
 }
-
