@@ -25,8 +25,10 @@ try {
         $stmt->execute();
 
         if ($stmt->rowCount() > 0) {
-?>     
-            <h2>Routes</h2>
+        ?>              
+            <link rel="stylesheet" href="../../styles.css">
+
+            <h2 class="select-route">Routes</h2>
 
             <table border='1'>
                 <tr>

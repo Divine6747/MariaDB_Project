@@ -7,6 +7,10 @@
     <title>Delete Route</title>
 </head>
 <body class="deleteRoute-body">
+        
+<div class="back-to-home-container">
+        <button type="button"><a href="../../index.html">BACK TO HOME</a></button>
+    </div>
     <section class="delete-Route">
     <div class="delete-form">
         <form action="delete.php" method="post">

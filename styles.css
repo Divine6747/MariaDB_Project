@@ -79,16 +79,18 @@ nav {
 
 .table-container {
   margin: auto;
-  max-width: 1000px;
+  text-align: center;
 }
+
 table {
   width: 100%;
-  margin-top: 20px;  
+  max-width: 1000px;
+  margin-top: 20px;
   border-collapse: collapse;
+  margin: auto; /* Center the table within its container */
 }
 
 th, td {
-  text-align: center;
   padding: 8px;
   font-size: 20px;
   font-weight: 100;
@@ -112,7 +114,8 @@ tr:hover {
 a {
   text-decoration: none;
   color: blue;
-  padding: 8px 16px;}
+  padding: 8px 16px;
+}
 
 /*Add Route Begins*/
 .addForm-body {
@@ -169,9 +172,6 @@ a {
   background-color: #0056b3;
 }
 
-.error-message {
-  color: red;
-}
 
 .back-to-home-container {
   position: absolute;
@@ -356,6 +356,143 @@ a {
 
 .select-routes-page input[type="submit"]:hover {
   background-color: #0056b3;
+}
+
+/* select Routes */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tr:hover {
+  background-color: #f2f2f2;
+}
+/* Add booking */
+.flight-update {
+  margin: auto; 
+  text-align: center;
+  width: 60%;
+  border-collapse: collapse;
+}
+
+.flight-update th, .flight-update td {
+  padding: 8px;
+  font-size: 1px;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.flight-update th {
+  background-color:  #53a3f3;
+  color: #000;
+}
+
+.flight-update tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.flight-update tr:hover {
+  background-color: #ddd;
+}
+
+.flight-update a {
+  text-decoration: none;
+  color: blue;
+}
+
+.addbooking-search {
+  display: inline-block;
+  padding: 10px 10px;
+  background-color: #53a3f3;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.addbooking-search button:hover {
+  background-color: #0056b3;
+}
+
+/* Apply styles to the form container */
+.seacrchFlightForm {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url(images/pexels-jeffry-surianto-11186075.jpg);
+  background-size: cover;
+  background-position: center;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Apply styles to the form heading */
+.seacrchFlightForm h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Apply styles to the form labels */
+.seacrchFlightForm label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Apply styles to the select elements */
+.seacrchFlightForm select {
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* Apply styles to the submit button */
+.seacrchFlightForm button {
+  width: 100%;
+  padding: 12px;
+  background-color:  #53a3f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Apply hover effect to the submit button */
+.seacrchFlightForm button:hover {
+  background-color: #45a049;
+}
+
+.select-route h2{
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
 }
 
  

@@ -43,7 +43,7 @@ try {
                 <tr>
                     <th>Flight Number</th>
                     <th>Departure Time</th>
-                    <th>Select to Flight to Book</th>
+                    <th>Book</th>
                 </tr>
                 <?php foreach ($flights as $flight) { ?>
                     <tr>
@@ -52,7 +52,7 @@ try {
                         <td>
                             <form method="get" action="flightBookingDetails.php">
                                 <input type="hidden" name="flightNumber" value="<?php echo $flight['FlightNumber']; ?>">
-                                <button type="submit" name="select">Select</button>
+                                <button  class = "addbooking-search" type="submit" name="select">Select</button>
                             </form>
                         </td>
                     </tr>
