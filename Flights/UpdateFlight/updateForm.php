@@ -12,12 +12,11 @@ try {
     $flightNumber = $row['FlightNumber'];
     $routeID = $row['RouteID'];
     $flightTime = $row['FlightTime'];
-    $estArrTime = $row['EstArrTime'];
     $flightDate = $row['FlightDate'];
     $status = $row['Status'];
     $numSeats = $row['NumSeats'];
 
-    include 'updatedetails.html';
+    include 'updatedetails.php';
 } catch (PDOException $e) {
     echo 'Unable to connect to the database server: ' . $e->getMessage();
 }

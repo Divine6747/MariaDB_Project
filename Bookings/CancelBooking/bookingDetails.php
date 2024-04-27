@@ -12,7 +12,6 @@
     <p>Passenger ID: <?php echo $booking['PassengerID']; ?></p>
     <p>Flight Number: <?php echo $booking['FlightNumber']; ?></p>
     <p>Flight Time: <?php echo $booking['FlightTime']; ?></p>
-    <p>Estimated Arrival Time: <?php echo $booking['EstArrTime']; ?></p>
     <p>No. of Baggage: <?php echo $booking['NoBaggage']; ?></p>
     <p>Status: <?php echo $booking['Status']; ?></p>
     <form action="cancelBooking.php" method="post">

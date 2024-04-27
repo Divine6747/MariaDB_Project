@@ -47,7 +47,12 @@
 
             $stmt = $pdo->prepare('UPDATE bookings SET Status = "Cancelled" WHERE BookingID = :bookingID');
             $stmt->bindValue(':bookingID', $bookingID);
-            $stmt->execute();            
+            $stmt->execute();
+            
+            //Increase number of Available seats from the flights table
+            $stmtUpdateSeats = $pdo->prepare('UPDATE flights SET NumAvailSeats = NumAvailSeats + 1 WHERE FlightNumber = :flightNumber');
+            $stmtUpdateSeats->bindValue(':flightNumber', $flightNumber);
+            $stmtUpdateSeats->execute();
             echo "<script>redirectCancelBooking();</script>";
         } catch (PDOException $e) {
             echo 'Error: ' . $e->getMessage();

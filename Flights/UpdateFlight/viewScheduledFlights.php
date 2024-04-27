@@ -7,7 +7,6 @@
         <th>RouteID</th>
         <th>Flight Date</th>
         <th>Flight Time</th>
-        <th>Estimated Arrival Time</th>
         <th>Number of Seats</th>
         <th>Status</th>
         <th>Delete</th>
@@ -20,7 +19,6 @@
                   <td><?php echo $row['RouteID'] ?></td>
                   <td><?php echo $row['FlightDate'] ?></td>
                   <td><?php echo $row['FlightTime'] ?></td>
-                  <td><?php echo $row['EstArrTime'] ?></td>
                   <td><?php echo $row['NumSeats'] ?></td>
                   <td><?php echo $row['Status'] ?></td>
                   <td><a href="deleteFlightForm.html?FlightNumber=<?php echo $row['FlightNumber'] ?>">Remove</a></td>

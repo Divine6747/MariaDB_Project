@@ -173,6 +173,33 @@ a {
   color: red;
 }
 
+.back-to-home-container {
+  position: absolute;
+  top: 20px; 
+  left: 50px;
+}
+
+.back-to-home-container button {
+  padding: 10px 20px;
+  background-color: #53a3f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.5s ease;
+}
+
+.back-to-home-container button:hover {
+  background-color: #0056b3;
+}
+
+.back-to-home-container button a {
+  color: white;
+  text-decoration: none;
+}
+
 
 /* Select Routes Begins */
 

@@ -11,11 +11,16 @@
 </head>
 
 <body class="addForm-body">
+    
+    <div class="back-to-home-container">
+        <button type="button"><a href="../../index.html">BACK TO HOME</a></button>
+    </div>
+
     <section class="form-control">
         <h1>ADD A NEW ROUTE</h1>
         <form class="routeFormID" id="routeFormID" action="addRoute.php" method="post" onsubmit="return validateRoute()">
 
-            Departure Airport: <input type="text" id="DeptAirport" name="DeptAirport" value="" required><br><br>
+            Departure Airport: <input type="text" id="DeptAirport" name="DeptAirport" value="" required>
             
             Arrival Airport: <input type="text" id="ArrAirport" name="ArrAirport" value="" required><br><br>
 

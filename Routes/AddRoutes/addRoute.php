@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Routes</title>
-</head>
-<body>
 <?php
 if (isset($_POST['submitdetails'])) {
     try {
@@ -21,19 +13,27 @@ if (isset($_POST['submitdetails'])) {
             $pdo = new PDO('mysql:host=localhost;dbname=airlinesys;charset=utf8', 'root', '');
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $sql = "INSERT INTO routes (DeptAirport, ArrAirport, TicketPrice, Duration, Status) VALUES (:DeptAirport, :ArrAirport, :TicketPrice, :Duration, :Status)";
-            $stmt = $pdo->prepare($sql);
+            // Check if the route already exists
+            $checkStmt = $pdo->prepare("SELECT * FROM routes WHERE DeptAirport = :DeptAirport AND ArrAirport = :ArrAirport");
+            $checkStmt->bindParam(':DeptAirport', $DeptAirport);
+            $checkStmt->bindParam(':ArrAirport', $ArrAirport);
+            $checkStmt->execute();
+            $existingRoute = $checkStmt->fetch();
 
-            $stmt->bindValue(':DeptAirport', $DeptAirport);
-            $stmt->bindValue(':ArrAirport', $ArrAirport);
-            $stmt->bindValue(':TicketPrice', $TicketPrice);
-            $stmt->bindValue(':Duration', $Duration);
-            $stmt->bindValue(':Status', $Status);
-
-            $stmt->execute();
-            echo "Route added successfully!";
+            if ($existingRoute) {
+                echo "Route with the same departure and arrival airports already exists.";
+            } else {
+                //If not insert the new route
+                $insertStmt = $pdo->prepare("INSERT INTO routes (DeptAirport, ArrAirport, TicketPrice, Duration, Status) VALUES (:DeptAirport, :ArrAirport, :TicketPrice, :Duration, :Status)");
+                $insertStmt->bindParam(':DeptAirport', $DeptAirport);
+                $insertStmt->bindParam(':ArrAirport', $ArrAirport);
+                $insertStmt->bindParam(':TicketPrice', $TicketPrice);
+                $insertStmt->bindParam(':Duration', $Duration);
+                $insertStmt->bindParam(':Status', $Status);
+                $insertStmt->execute();
+                echo "Route added successfully!";
+            }
             header("location: addRouteForm.html",true,303);
-
         }
     } catch (PDOException $e) {
         echo 'An error has occurred: ' . $e->getMessage();
@@ -51,6 +51,3 @@ if (isset($_POST['submitdetails'])) {
 }
 include 'addRouteForm.html';
 ?>
-
-</body>
-</html>

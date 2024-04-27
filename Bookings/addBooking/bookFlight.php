@@ -34,20 +34,28 @@
             $stmtPassenger->execute();
     
             if ($stmtPassenger->rowCount() > 0) {
-                if (isset($_POST['flightNumber']) && isset($_POST['baggage'])) {
+
+                if (isset($_POST['flightNumber']) && isset($_POST['baggage'])&& isset($_POST['flightTime'])) {
                     $flightNumber = $_POST['flightNumber'];
+                    $flightTime = $_POST['flightTime'];
                     $noBaggage = $_POST['baggage'];
                     $status = 'Confirm';
     
-                    $stmtBooking = $pdo->prepare('INSERT INTO bookings (PassengerID, FlightNumber, NoBaggage, Status) 
-                                                    VALUES (:passengerID, :flightNumber, :baggage, :status)');
+                    $stmtBooking = $pdo->prepare('INSERT INTO bookings (PassengerID, FlightNumber, FlightTime, NoBaggage, Status) 
+                                                    VALUES (:passengerID, :flightNumber, :flightTime, :baggage, :status)');
                     $stmtBooking->bindValue(':passengerID', $pdo->lastInsertId());
                     $stmtBooking->bindValue(':flightNumber', $flightNumber);
+                    $stmtBooking->bindValue(':flightTime', $flightTime);
                     $stmtBooking->bindValue(':baggage', $noBaggage);
                     $stmtBooking->bindValue(':status', $status);
                     $stmtBooking->execute();
     
                     if ($stmtBooking->rowCount() > 0) {
+                        //Deceasing the flight number
+                        $stmtUpdateSeats = $pdo->prepare('UPDATE flights SET NumAvailSeats = NumAvailSeats - 1 WHERE FlightNumber = :flightNumber');
+                        $stmtUpdateSeats->bindValue(':flightNumber', $flightNumber);
+                        $stmtUpdateSeats->execute();
+
                         echo '<script>redirectBooking();</script>';
                     } else {
                         echo "Failed to insert the booking details.";

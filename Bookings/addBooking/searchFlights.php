@@ -23,8 +23,8 @@ try {
         $deptAirport = $_POST['deptAirport'];
         $arrAirport = $_POST['arrAirport'];
 
-        // Retrieving flights for the selected departure and arrival airports
-        $sql = 'SELECT f.FlightNumber, f.FlightTime, f.EstArrTime
+        //Retrieving flights for the selected departure and arrival airports
+        $sql = 'SELECT f.FlightNumber, f.FlightTime
                 FROM flights f
                 JOIN routes r ON f.RouteID = r.RouteID
                 WHERE r.DeptAirport = :deptAirport AND r.ArrAirport = :arrAirport 
@@ -43,14 +43,12 @@ try {
                 <tr>
                     <th>Flight Number</th>
                     <th>Departure Time</th>
-                    <th>Estimated Arrival Time</th>
                     <th>Select to Flight to Book</th>
                 </tr>
                 <?php foreach ($flights as $flight) { ?>
                     <tr>
                         <td class="flightNumber"><?php echo $flight['FlightNumber']; ?></td>
                         <td><?php echo $flight['FlightTime']; ?></td>
-                        <td><?php echo $flight['EstArrTime']; ?></td>
                         <td>
                             <form method="get" action="flightBookingDetails.php">
                                 <input type="hidden" name="flightNumber" value="<?php echo $flight['FlightNumber']; ?>">

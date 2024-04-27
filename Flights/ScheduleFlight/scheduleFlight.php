@@ -1,52 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Routes</title>
-    <script src="scheduleFlights.js"></script>
-</head>
-<body>
-    <form method="post" action="searchRoute.php">
-        <label for="deptAirport">Departure Airport:</label>
-        <select name="deptAirport">
-            <?php foreach ($deptAirports as $dept) : ?>
-                <option value="<?php echo $dept; ?>"><?php echo $dept; ?></option>
-            <?php endforeach; ?>
-        </select>
+<?php
+    if (isset($_POST['scheduleFlight'])) {
 
-        <label for="arrAirport">Arrival Airport:</label>
-        <select name="arrAirport">
-            <?php foreach ($arrAirports as $arr) : ?>
-                <option value="<?php echo $arr; ?>"><?php echo $arr; ?></option>
-            <?php endforeach; ?>
-        </select>    
+        $routeId = $_POST['routeId'];
+        $flightTime = $_POST['flightTime'];
+        $departureDate = $_POST['departureDate'];
+        $numSeats = $_POST['noSeats'];
 
-        <button type="submit" name="search">Search Route</button>
-        <p><?php echo $message; ?></p>
-        <?php echo "Duration: " . $duration . " min"; ?></p>
+        try {
+            $pdo = new PDO('mysql:host=localhost;dbname=AirlineSYS;charset=utf8', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        <label for="flightTime">Departure Time:</label>
-        <select name="flightTime">
+            //Checking if there's already a flight scheduled for the same route and time
+            $sqlCheckDuplicate = 'SELECT COUNT(*) FROM flights WHERE RouteID = :routeId AND FlightTime = :flightTime AND FlightDate = :departureDate';
+            $stmtCheckDuplicate = $pdo->prepare($sqlCheckDuplicate);
+            $stmtCheckDuplicate->bindValue(':routeId', $routeId);
+            $stmtCheckDuplicate->bindValue(':flightTime', $flightTime);
+            $stmtCheckDuplicate->bindValue(':departureDate', $departureDate);
+            $stmtCheckDuplicate->execute();
+            $duplicateCount = $stmtCheckDuplicate->fetchColumn();
 
-            <?php foreach ($flightTimes as $time) : ?>
-                <option value="<?php echo $time; ?>"><?php echo $time; ?></option>
-            <?php endforeach; ?>
-        </select>
+            if ($duplicateCount > 0) {
 
-        <?php if ($estimatedArrivalTime) : ?>
-            <p>Estimated Arrival Time: <?php echo $estimatedArrivalTime; ?></p>
-        <?php endif; ?>
-
-        <button type="submit" name="calculate">Calculate</button><br><br>
-
-        <label for="departureDate" required>Departure Date:</label>
-        <input type="date" id="departureDate" name="departureDate"><br><br>
-
-        <label for="noSeats">No. Seats:</label>
-        <input type="number" id="noSeats" name="noSeats"><br><br>
-
-        <input type="submit" name="schedule" value="Schedule Flight">
-    </form>   
-</body>
-</html>
+                $message = "A flight is already scheduled for the same route and time.";
+            }
+            else {
+                $sqlInsert = 'INSERT INTO flights (RouteID, FlightTime, FlightDate, NumSeats, NumAvailSeats, Status) VALUES (:routeId, :flightTime, :departureDate, :numSeats, :numSeats, "Active")';
+                $stmtInsert = $pdo->prepare($sqlInsert);
+                $stmtInsert->bindValue(':routeId', $routeId);
+                $stmtInsert->bindValue(':flightTime', $flightTime);
+                $stmtInsert->bindValue(':departureDate', $departureDate);
+                $stmtInsert->bindValue(':numSeats', $numSeats);
+                $stmtInsert->execute();
+                header("Location: searchRoute.php", true, 303);
+            }
+        } catch (PDOException $e) {
+            $message = "Error: " . $e->getMessage();
+        }
+    }
+?>
