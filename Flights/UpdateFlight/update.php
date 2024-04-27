@@ -8,16 +8,16 @@ try {
             WHERE FlightNumber = :flightNumber';
     
     $result = $pdo->prepare($sql);
-    $result->bindValue(':flightNumber', $_POST['ud_flightNumber']);
-    $result->bindValue(':flightDate', $_POST['ud_flightDate']);
-    $result->bindValue(':status', $_POST['ud_status']);
-    $result->bindValue(':numSeats', $_POST['ud_numSeats']);
+    $result->bindValue(':flightNumber', $_POST['flightNumber']);
+    $result->bindValue(':flightDate', $_POST['flightDate']);
+    $result->bindValue(':status', $_POST['status']);
+    $result->bindValue(':numSeats', $_POST['numSeats']);
     $result->execute();
     
     $count = $result->rowCount();
     
     if ($count > 0) {
-        echo "Flight details updated successfully for Flight Number: " . $_POST['ud_flightNumber'];
+        echo "Flight details updated successfully for Flight Number: " . $_POST['flightNumber'];
     } else {
         echo "No changes were made to the flight details.";
     }

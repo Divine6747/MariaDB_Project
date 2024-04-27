@@ -246,51 +246,116 @@ a {
 
 
 /* Delete Route Begins */
-
-.delete-Route {
+.delete-Route{
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url(images/pexels-jeffry-surianto-11186075.jpg);
+  background-size: cover;
+  background-position: center;  
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .delete-Route h1{
-  font-weight: 200;
+  font-weight: 300;
 }
 
 .delete-form {
-    margin: 20px auto;
-    padding: 20px;
-    width: 50%;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  padding: 20px;
+  width: 50%;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .delete-form label {    
-    margin-bottom: 10px;
-    display: block;
+  margin-bottom: 10px;
+  display: block;
 }
 
 .delete-form input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
 .delete-form input[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background-color:  #53a3f3;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color:  #53a3f3;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.table-container {
+  margin: auto;
+  max-width: 1000px;
+}
+.delete-Route table {
+  width: 100%;
+  margin-top: 35px;  
+  border-collapse: collapse;
 }
 /* Delete Route Ends*/
 
+/* view route*/
+.select-routes-page{
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url(images/pexels-jeffry-surianto-11186075.jpg);
+  background-size: cover;
+  background-position: center;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.select-routes-page .container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+.select-routes-page h2 {
+  text-align: center;
+  color: #333;
+}
+
+.select-routes-page form {
+  text-align: center;
+}
+
+.select-routes-page select {
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.select-routes-page input[type="submit"] {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.select-routes-page input[type="submit"]:hover {
+  background-color: #0056b3;
+}
 
  

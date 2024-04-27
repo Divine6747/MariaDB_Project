@@ -20,18 +20,20 @@
         <h1>ADD A NEW ROUTE</h1>
         <form class="routeFormID" id="routeFormID" action="addRoute.php" method="post" onsubmit="return validateRoute()">
 
-            Departure Airport: <input type="text" id="DeptAirport" name="DeptAirport" value="" required>
+            Departure Airport: <input type="text" id="DeptAirport" name="DeptAirport" value="" required min = 3 max = 3 pattern="[A-Z]{3}">
             
-            Arrival Airport: <input type="text" id="ArrAirport" name="ArrAirport" value="" required><br><br>
+            Arrival Airport: <input type="text" id="ArrAirport" name="ArrAirport" value="" required min = 3 max = 3><br><br>
 
-            Ticket Price: <input type="text" id="TicketPrice" name="TicketPrice" value="" required><br><br>
+            Ticket Price: <input type="text" id="TicketPrice" name="TicketPrice" value="" required ><br><br>
 
             Duration (in minutes): <input type="text" id="Duration" name="Duration" value="" required><br><br>
 
             Status:
-            <select id="Status" name="Status">
+            <select id="Status" name="Status" required>
+
                 <option value="Active">Active</option>
                 <option value="Inactive">Inactive</option>
+
             </select><br><br>
             
             <input type="submit" name="submitdetails" value="SUBMIT">

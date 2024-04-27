@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../../styles.css">
     <title>Select Routes</title>
 </head>
-<body>
-    <h2>Select Routes</h2>
-    <form action="selectRoutes.php" method="post">
-       Select Routes by Status:
-        <select name="routeStatus" id="routeStatus">
-            <option value="Active">Active</option>
-            <option value="Inactive">Inactive</option>
-            <option value="">All</option>
-        </select>
-        <input type="submit" value="Submit">
-    </form>
+<body class="select-routes-page">
+    <div class="container">
+        <h2>Select Routes</h2>
+        <form action="selectRoutes.php" method="post">
+            Select Routes by Status:
+            <select name="routeStatus" id="routeStatus">
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+                <option value="">All</option>
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </body>
 <script src="backFunction.js"></script>
 </html>

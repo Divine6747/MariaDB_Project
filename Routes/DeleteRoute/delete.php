@@ -46,7 +46,7 @@
         catch (PDOException $e) {
 
             if ($e->getCode() == 23000) {
-                echo "Oops! Couldn't delete the record as it is linked to other tables. <a href='viewRouteForDelition.php'>Click here</a> to go back.";
+                echo "Couldn't delete the record as it is linked to other tables";
             } 
             else {
                 echo "An error occurred: " . $e->getMessage();

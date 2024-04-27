@@ -15,8 +15,6 @@
       Route ID: <input type="text" name="routeID" value="<?php echo $routeID; ?>" readonly><br>
 
       Flight Time: <input type="text" name="flightTime" value="<?php echo $flightTime; ?>" readonly><br>
-
-      Estimated Arrival Time: <input type="text" name="estArrTime" value="<?php echo $estArrTime; ?>" readonly><br>
       
       Flight Date: <input type="date" name="flightDate" value="<?php echo $flightDate; ?>"><br>
 
