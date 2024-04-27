@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel Booking</title>
+</head>
+<body>
+    <h2>Please enter Booking ID, Forename, and Surname to Cancel</h2>
+    <form action="cancelBooking.php" method="post">
+        <label for="bookingID">Booking ID:</label><br>
+        <input type="text" id="bookingID" name="bookingID" required><br><br>
+        <label for="forename">Forename:</label><br>
+        <input type="text" id="forename" name="forename" required><br><br>
+        <label for="surname">Surname:</label><br>
+        <input type="text" id="surname" name="surname" required><br><br>
+        <input type="submit" name="submitBookingID" value="Submit">
+    </form>
+</body>
+</html>
