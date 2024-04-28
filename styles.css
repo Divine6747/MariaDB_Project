@@ -9,23 +9,18 @@
  min-height: 100vh;  
  width: 100%;  
  background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.1)),url(images/pexels-jeffry-surianto-11186075.jpg);
-   /*
-     Image Name: pexels-jeffry-surianto-11186075.jpg
-     Created By: Jeffry Surianto
-     Created On: 14th February 2022
-     Downlaoded On: 04.03.24 At: 17:18
-     Website: https://www.pexels.com
-     Source: https://www.pexels.com/photo/view-of-the-beautiful-clouds-and-island-from-the-airplane-11186075/
-   
-   */
+    /*
+      Image Name: pexels-jeffry-surianto-11186075.jpg
+      Created By: Jeffry Surianto
+      Created On: 14th February 2022
+      Downlaoded On: 04.03.24 At: 17:18
+      Website: https://www.pexels.com
+      Source: https://www.pexels.com/photo/view-of-the-beautiful-clouds-and-island-from-the-airplane-11186075/
+    
+    */
  background-position: center;  
  background-size: cover;  
  position: relative;  
-}
-
-body {
-  margin: 0;
-  padding: 0;
 }
 
 nav {
@@ -77,45 +72,17 @@ nav {
   display: block;
 }
 
-.table-container {
-  margin: auto;
-  text-align: center;
-}
 
-table {
-  width: 100%;
-  max-width: 1000px;
-  margin-top: 20px;
-  border-collapse: collapse;
-  margin: auto; /* Center the table within its container */
+.h1 {
+  color:#000;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 4px;
+  font-size: 30px;
+  font-weight: 500;
 }
-
-th, td {
-  padding: 8px;
-  font-size: 20px;
-  font-weight: 100;
-}
-
-th {
-  background-color:  #53a3f3;
-  color: #000;
-}
-
-tr:nth-child(even) {
-  background-color: #ffffff; 
-}
-tr:nth-child(odd) {
-  background-color: #7bc497; 
-}
-
-tr:hover {
-  background-color: #53a3f3;
-}
-a {
-  text-decoration: none;
-  color: blue;
-  padding: 8px 16px;
-}
+  
 
 /*Add Route Begins*/
 .addForm-body {
@@ -171,8 +138,9 @@ a {
 .form-control input[type="submit"]:hover {
   background-color: #0056b3;
 }
+/**add route ends**/
 
-
+/* Select Routes Begins */
 .back-to-home-container {
   position: absolute;
   top: 20px; 
@@ -199,9 +167,6 @@ a {
   color: white;
   text-decoration: none;
 }
-
-
-/* Select Routes Begins */
 
 .select-form {
   margin: 20px auto;
@@ -240,6 +205,78 @@ a {
   border: none;
   border-radius: 3px;
   cursor: pointer;
+}
+
+.all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.select-route-table-container {
+  margin-top: 10px;
+  width: 90%;
+  max-width: 1000px;
+  overflow-x: auto;
+}
+
+.select-route-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.select-route-table th, .select-route-table td {
+  padding: 8px;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.select-route-table th {
+  background-color: #53a3f3;
+  color: #000;
+}
+
+.select-route-table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.select-route-table tr:nth-child(odd) {
+  background-color: #7bc497;
+}
+
+.select-route-table tr:hover {
+  background-color: #53a3f3;
+}
+
+.select-route-table h2 {
+  color: #000;
+  background-color: rgba(83, 163, 243, 0.9);
+  border-radius: 4px;  
+  font-size: 24px;
+  margin: 0 auto 20px auto;
+  padding: 10px;
+  text-align: center;
+  font-weight: 200;
+  width: 20%;
+}
+.back-to-top-left {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: #53a3f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.back-to-top-left:hover {
+  background-color: #0056b3;
 }
 
 /* Select Route Ends*/
@@ -416,7 +453,7 @@ a {
   text-decoration: none;
   color: blue;
 }
-
+/*Add booking*/
 .addbooking-search {
   display: inline-block;
   padding: 10px 10px;
@@ -435,7 +472,6 @@ a {
   background-color: #0056b3;
 }
 
-/* Apply styles to the form container */
 .seacrchFlightForm {
   min-height: 100vh;
   width: 100%;
@@ -448,51 +484,300 @@ a {
   align-items: center;
 }
 
-/* Apply styles to the form heading */
+.seacrchFlightForm .form{
+
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 40px;
+  font-size: 19px;
+  border: 2px solid #000000;
+  padding: 60px;
+  border-radius: 10px;
+}
+
 .seacrchFlightForm h1 {
   text-align: center;
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-/* Apply styles to the form labels */
 .seacrchFlightForm label {
   display: block;
   margin-bottom: 10px;
 }
 
-/* Apply styles to the select elements */
 .seacrchFlightForm select {
   padding: 10px;
-  margin-bottom: 20px;
-  font-size: 16px;
-  border: 1px solid #ccc;
+  margin-bottom: 20px;  
   border-radius: 4px;
   width: 100%;
+  font-size: 16px;
+  border: 1px solid #ccc;
 }
 
-/* Apply styles to the submit button */
-.seacrchFlightForm button {
-  width: 100%;
+.seacrchFlightForm .back {
+  width: 10%;
+  transition: background-color 0.3s ease;
   padding: 12px;
   background-color:  #53a3f3;
   color: white;
+  font-size: 16px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
 }
 
-/* Apply hover effect to the submit button */
+.seacrchFlightForm .button {
+  width: 100%;
+  transition: background-color 0.3s ease;
+  padding: 12px;
+  background-color:  #53a3f3;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 .seacrchFlightForm button:hover {
   background-color: #45a049;
 }
 
-.select-route h2{
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
+/*Flight details section*/
+
+
+.passFlightForm-body{
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url(images/pexels-jeffry-surianto-11186075.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
- 
+.pass-form-control {
+  width: 50%; 
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 40px;
+  font-size: 19px;
+}
+
+
+.pass-form-control #passengerID {
+  border: 2px solid #000000;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.pass-form-control input[type="text"],
+.pass-form-control select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+.pass-form-control input[type="email"],
+.pass-form-control select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  border-radius: 4px;
+}
+
+.pass-form-control input[type="tel"],
+.pass-form-control select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.pass-form-control input[type="number"],
+.pass-form-control select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+.pass-form-control input[type="submit"] {
+  width:95%;
+  padding: 10px;
+  background-color:  #53a3f3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+.pass-form-control input[type="submit"]:hover {
+  background-color: #0056b3;
+  border-radius: 4px;
+}
+
+.pass-form-control h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+/**update booking**/
+.booking-update-body {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url(images/pexels-jeffry-surianto-11186075.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.update-form-control {
+  width: 50%; 
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 40px;
+  font-size: 19px;
+  border-radius: 4px;
+}
+
+.update-form-control h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.update-form-control #updateFornormID {
+  border: 2px solid #000000;
+  padding: 20px;
+  border-radius: 4px;
+
+}
+
+.update-form-control input[type="text"],
+.update-form-control select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+
+.update-form-control input[type="submit"] {
+  width:95%;
+  padding: 10px;
+  background-color:  #53a3f3;
+  color: #fff;
+  border: none;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  
+}
+
+.update-form-control input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+
+.booking-update-body2 {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url(images/pexels-jeffry-surianto-11186075.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.update-form-control2 {
+  width: 50%; 
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 40px;
+  font-size: 19px;
+  border-radius: 4px;
+}
+
+.update-form-control2 h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.update-form-control2 #updateformcontrol2ID {
+  border: 2px solid #000000;
+  padding: 20px;
+  border-radius: 4px;
+
+}
+
+.update-form-control2 input[type="text"],
+.uupdate-form-control2 select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+
+.update-form-control2 input[type="time"],
+.uupdate-form-control2 select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+
+.update-form-control2 input[type="number"],
+.uupdate-form-control2 select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+.update-form-control2 input[type="text"],
+.uupdate-form-control2 select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+
+.update-form-control2 input[type="submit"] {
+  width:95%;
+  padding: 10px;
+  background-color:  #53a3f3;
+  color: #fff;
+  border: none;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  
+}
+
+.update-form-control2 input[type="submit"]:hover {
+  background-color: #0056b3;
+}

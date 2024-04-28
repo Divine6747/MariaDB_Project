@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Route</title>
 </head>
-<body>
+<body>    
     <h1>Route Details</h1>
     <p>Route ID: <?php echo $routeId; ?></p>
     <p>Departure Airport: <?php echo $deptAirport; ?></p>
@@ -24,12 +24,16 @@
         </select><br><br>
 
         <label for="departureDate">Departure Date:</label>
-        <input type="date" id="departureDate" name="departureDate" required><br><br>
+        <input type="date" id="departureDate" name="flightDate" required><br><br>
 
         <label for="noSeats">Number of Seats:</label>
         <input type="number" id="noSeats" name="noSeats" value="50" required min="50" max = 100><br><br>
 
+        <input type="hidden" name="routeId" value="<?php echo $routeId; ?>">
+
         <button type="submit" name="scheduleFlight">Schedule Flight</button>
     </form>
+    <?     include("viewSelectedRoute.php");
+?>
 </body>
 </html>

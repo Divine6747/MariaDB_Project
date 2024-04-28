@@ -7,12 +7,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles.css">
+    <script src="redirect.js"></script>
     <title>Flight Search</title>
 </head>
 <body class="seacrchFlightForm">
+<button id="back" onclick="goBackToHome()" class="back-to-top-left">BACK TO HOME</button>
+
+    <div class="form" >
+    <form method="post" action="searchFlights.php">
     <h1>Search for Flight to Booking</h1>
 
-    <form method="post" action="searchFlights.php">
         <label for="deptAirport">Departure Airport:</label>
         <select name="deptAirport">
             <option>Select an Option</option>
@@ -28,7 +32,8 @@
                 <option value="<?php echo $arr; ?>"><?php echo $arr; ?></option>
             <?php endforeach; ?>
         </select>
-        <button type="submit" name="search">Search Flights</button>
+        <button class="button"type="submit" name="search">Search Flights</button>
     </form>    
+    </div>   
 </body>
 </html>

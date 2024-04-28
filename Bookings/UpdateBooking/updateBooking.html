@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Booking</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <script src="redirect.js"></script>
 </head>
-<body>
-    <h2>Please enter Booking ID, Forename, and Surname to Cancel</h2>
-    <form action="updateBooking.php" method="post">
-        <label for="bookingID">Booking ID:</label><br>
-        <input type="text" id="bookingID" name="bookingID" required><br><br>
-        <label for="forename">Forename:</label><br>
-        <input type="text" id="forename" name="forename" required><br><br>
-        <label for="surname">Surname:</label><br>
-        <input type="text" id="surname" name="surname" required><br><br>
-        <input type="submit" name="submitUpdateBookingID" value="Submit">
-    </form>
+<body class="booking-update-body">
+    <button onclick="goBackToHome()" class="back-to-top-left">BACK TO HOME</button>
+
+    <section class="update-form-control">
+        <h2 class="booking-update-heading">Please enter Booking ID, Forename, and Surname to Cancel</h2>
+        <form class="updateFornormID" id="updateFornormID" action="updateBooking.php" method="post">
+
+            <label for="bookingID" class="booking-update-label">Booking ID:</label><br>
+            <input type="text" id="bookingID" name="bookingID" required class="booking-update-input"><br><br>
+    
+            <label for="forename" class="booking-update-label">Forename:</label><br>
+            <input type="text" id="forename" name="forename" required class="booking-update-input"><br><br>
+            
+            <label for="surname" class="booking-update-label">Surname:</label><br>
+            <input type="text" id="surname" name="surname" required class="booking-update-input"><br><br>
+    
+            <input type="submit" name="submitUpdateBookingID" value="Submit" class="booking-update-submit">
+        </form>
+    </section>   
 </body>
 </html>

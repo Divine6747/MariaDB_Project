@@ -12,36 +12,38 @@
             $result->bindValue(':routeId', $routeId);
             $result->execute();
 
-            // Getting route details
+            // Getting the route details
             $row = $result->fetch(PDO::FETCH_ASSOC);
 
             if ($row) {
                 $deptAirport = $row['DeptAirport'];
                 $arrAirport = $row['ArrAirport'];
                 $duration = $row['Duration'];
-            } else {
+            } 
+            else {
                 $deptAirport = "Not found";
                 $arrAirport = "Not found";
                 $duration = "Not found";
             }
-        } catch (PDOException $e) {
+        } 
+        catch (PDOException $e) {
             $deptAirport = "Error";
             $arrAirport = "Error";
             $duration = "Error";
         }
-    } else {
+    } 
+    else {
         $deptAirport = "Route ID not given";
         $arrAirport = "Route ID not given";
         $duration = "Route ID not given";
     }
 
     try {
-        // Retrieve flight times from the flighttime table
         $sqlFlightTimes = 'SELECT FlightTime FROM flightTimes';
         $stmtFlightTimes = $pdo->query($sqlFlightTimes);
         $flightTimes = $stmtFlightTimes->fetchAll(PDO::FETCH_COLUMN);
-    } catch (PDOException $e) {
-        // Handle errors if any
+    } 
+    catch (PDOException $e) {
         $flightTimes = [];
         echo "Error fetching flight times: " . $e->getMessage();
     }

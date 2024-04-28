@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+    <script src="redirect.js"></script>
+
     <title>Flight Details</title>
 </head>
-<body>
-    <section>
+<body class="passFlightForm-body">
+<button onclick="goBackToSelect()" class="back-to-top-left">BACK TO FLIGHT RE-BOOKING</button>
+    <section class="pass-form-control">
         <?php if(isset($flightDetails)): ?>
 
         <h2>Flight Details</h2>
@@ -18,10 +25,10 @@
 
         <p>No flight details found.</p>
 
-        <?php endif; ?>
+        <?php endif; ?><br>
 
-        <h3>Passenger Details</h3>
-        <form action="bookFlight.php" method="post">
+        <h2>Passenger Details</h2>
+        <form class="passengerID" id="passengerID" action="bookFlight.php" method="post">
             <label for="forename">Forename:</label><br>
             <input type="text" id="forename" name="forename" required maxlength = 60><br><br>
 

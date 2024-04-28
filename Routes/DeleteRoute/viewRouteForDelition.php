@@ -20,7 +20,7 @@
     </div>
        
     <br><br>
-    <h1>View All Active Routes</h1>
+    <h1 class= "h1">View All Active Routes</h1>
     <table class="table-container"> 
         <tr>    
             <th>RouteID</th>

@@ -21,4 +21,8 @@ function validateScheduleFlight(){
     }
 
 }
+function success(){
+    alert("Flight Scheduled Successfully");
+    return true;
+}
 
