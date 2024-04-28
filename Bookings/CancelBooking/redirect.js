@@ -8,3 +8,8 @@ function redirectCancelBooking() {
     }, 100);
     };
 }
+
+
+function goBackToHome() {
+    window.location.href = "../../index.html";
+}

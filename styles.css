@@ -607,6 +607,15 @@ nav {
   border: 1px solid #ccc;
 }
 
+
+.pass-form-control input[type="date"],
+.pass-form-control select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
 .pass-form-control input[type="submit"] {
   width:95%;
   padding: 10px;
@@ -616,8 +625,7 @@ nav {
   border-radius: 4px;
   align-items: center;
   border-radius: 4px;
-  cursor: pointer;
-  
+  cursor: pointer;  
 }
 
 .pass-form-control input[type="submit"]:hover {
@@ -781,3 +789,171 @@ nav {
 .update-form-control2 input[type="submit"]:hover {
   background-color: #0056b3;
 }
+
+/**update booking ends**/
+
+/**cancel booking**/
+
+
+.cancelBooking-body {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url(images/pexels-jeffry-surianto-11186075.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cancelBooking-control {
+  width: 50%; 
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 40px;
+  font-size: 19px;
+  border-radius: 4px;
+}
+
+.cancelBooking-control h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.cancelBooking-control #cancelBookingID {
+  border: 2px solid #000000;
+  padding: 20px;
+  border-radius: 4px;
+
+}
+
+.cancelBooking-control input[type="text"],
+.cancelBooking-control select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+
+.cancelBooking-control input[type="time"],
+.cancelBooking-control select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+
+.cancelBooking-control input[type="number"],
+.cancelBooking-control select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+.cancelBooking-control input[type="text"],
+.cancelBooking-control select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+
+.cancelBooking-control input[type="submit"] {
+  width:95%;
+  padding: 10px;
+  background-color:  #53a3f3;
+  color: #fff;
+  border: none;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  
+}
+
+.cancelBooking-control input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/**888888888888*/
+.cancelBooking-body2 {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url(images/pexels-jeffry-surianto-11186075.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cancelBooking-control2 {
+  width: 50%; 
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 40px;
+  font-size: 19px;
+  border-radius: 4px;
+}
+
+.cancelBooking-control2 h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.cancelBooking-control2 #cancelBookingID2 {
+  border: 2px solid #000000;
+  padding: 20px;
+  border-radius: 4px;
+
+}
+
+.cancelBooking-control2 input[type="text"],
+.cancelBooking-control2 select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+
+
+.cancelBooking-control2 input[type="hidden"],
+.cancelBooking-control2 select {
+  width: calc(100% - 40px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+
+.cancelBooking-control2 input[type="submit"] {
+  width:95%;
+  padding: 10px;
+  background-color:  #53a3f3;
+  color: #fff;
+  border: none;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  
+}
+
+.cancelBooking-control2 input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/**cancel booking ends**/
