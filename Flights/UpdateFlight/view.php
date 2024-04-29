@@ -10,4 +10,7 @@ try {
    catch (PDOException $e) { 
      echo 'Unable to connect to the database server: ' . $e->getMessage();
    }
+include("viewScheduledFlights.php");
+
+   
 ?>

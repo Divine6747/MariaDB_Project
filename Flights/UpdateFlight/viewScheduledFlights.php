@@ -36,7 +36,6 @@
     </body>
 </html>
 
-<?php include("view.php");?>
 
 
 
